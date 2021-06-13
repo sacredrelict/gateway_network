@@ -1,0 +1,28 @@
+server:
+  address: localhost
+  port: 8080
+
+spring:
+  application:
+    name: network
+
+  jpa:
+    hibernate.ddl-auto: update
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/network
+    username: network
+    password: secret
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  liquibase:
+    enabled: true
+    change-log: db/changelog/dbchangelog.xml
+
+logging:
+  level:
+    root: INFO
+    com.omikheev.testapp.gateways.network: DEBUG
+
+app.properties:
+  max_peripheral_devices: 10
